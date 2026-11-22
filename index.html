@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Memory of Place: Five Heritage Sites That Shaped UAE Cities</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F6F0E4;--ink:#2B2622;--clay:#A65A2A;--clay2:#8A4720;--sand:#EADFCB;--blue:#2F6E94;--green:#5E7D35;--grey:#7D7266;--card:#FFFDF8}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 "DM Sans",system-ui,sans-serif}
+a{color:var(--clay2)}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+header.hero{background:#1E2A2C;color:#F5EFE4;position:relative;overflow:hidden}
+.hero .wrap{padding-top:72px;padding-bottom:64px;display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center}
+.eyebrow{font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:#E3A46F;font-weight:700}
+h1{font-family:Fraunces,serif;font-weight:700;font-size:clamp(38px,5vw,62px);line-height:1.05;margin:14px 0 18px}
+.hero p.lead{font-size:19px;color:#DCD3C4;max-width:34em}
+.meta{margin-top:22px;font-size:14px;color:#B9AE9E}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:26px}
+.chip{border:1px solid #5b6567;background:transparent;color:#F5EFE4;padding:7px 14px;border-radius:999px;font:500 14px "DM Sans";cursor:pointer;transition:.2s}
+.chip:hover,.chip.on{background:#E3A46F;border-color:#E3A46F;color:#1E2A2C}
+/* map */
+.mapbox{background:#26363A;border-radius:22px;padding:14px;position:relative}
+svg.map{width:100%;height:auto;display:block}
+.pin{cursor:pointer}
+.pin circle.dot{fill:#E3A46F;stroke:#1E2A2C;stroke-width:2;transition:r .2s}
+.pin:hover circle.dot,.pin.on circle.dot{fill:#fff}
+.pin circle.halo{fill:#E3A46F;opacity:.25;animation:pulse 2.4s infinite}
+@keyframes pulse{0%{r:8;opacity:.35}100%{r:22;opacity:0}}
+.pin text{fill:#F5EFE4;font:600 13px "DM Sans";paint-order:stroke;stroke:#26363A;stroke-width:4px}
+.maphint{position:absolute;left:24px;bottom:18px;font-size:12px;color:#9FB0B2}
+/* intro strip */
+.intro{padding:56px 0 18px}
+.intro h2,.sec h2,.time h2,.lessons h2{font-family:Fraunces,serif;font-size:34px;margin:0 0 10px;line-height:1.15}
+.intro p{max-width:46em;color:#4a423b}
+/* timeline */
+.time{padding:30px 0 10px}
+.tl{position:relative;display:grid;grid-template-columns:repeat(6,1fr);gap:10px;margin-top:26px}
+.tl:before{content:"";position:absolute;left:0;right:0;top:15px;height:3px;background:var(--sand)}
+.tl .t{position:relative;padding-top:38px;cursor:pointer}
+.tl .t:before{content:"";position:absolute;top:6px;left:0;width:20px;height:20px;border-radius:50%;background:var(--clay);border:4px solid var(--bg)}
+.tl .y{font-family:Fraunces,serif;font-size:24px;font-weight:700;color:var(--clay2)}
+.tl .d{font-size:14px;color:#4a423b;line-height:1.4}
+/* sections */
+.sec{padding:64px 0;border-top:1px solid #E2D6C1}
+.sec .grid{display:grid;grid-template-columns:1.25fr 1fr;gap:42px;align-items:start}
+.sec:nth-of-type(even) .grid{grid-template-columns:1fr 1.25fr}
+.sec:nth-of-type(even) .grid figure{order:2}
+.num{font-family:Fraunces,serif;font-size:15px;color:var(--clay);font-weight:600;letter-spacing:.08em}
+.where{font-size:14px;color:var(--grey);margin:-4px 0 16px}
+figure{margin:0;background:var(--card);border-radius:18px;overflow:hidden;box-shadow:0 10px 30px rgba(60,40,20,.10)}
+figure img{display:block;width:100%;height:auto;cursor:zoom-in}
+figure figcaption{font-size:13px;color:var(--grey);padding:10px 16px}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0 14px}
+.tag{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:4px 10px;border-radius:999px;background:var(--sand);color:var(--clay2)}
+.facts{display:grid;grid-template-columns:auto 1fr;gap:6px 14px;margin:16px 0;font-size:15px}
+.facts b{color:var(--clay2)}
+.think{border-left:4px solid var(--clay);background:#FBF6EC;padding:12px 16px;border-radius:0 12px 12px 0;font-style:italic;color:#4a423b}
+.btns{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+.btn{display:inline-flex;align-items:center;gap:8px;text-decoration:none;font-weight:700;font-size:15px;padding:10px 16px;border-radius:12px}
+.btn.v{background:var(--clay);color:#fff}
+.btn.v:hover{background:var(--clay2)}
+.btn.o{border:2px solid var(--clay);color:var(--clay2)}
+.dim{opacity:.25;filter:grayscale(.6);transition:.3s}
+/* lessons */
+.lessons{background:#1E2A2C;color:#F5EFE4;padding:64px 0;margin-top:20px}
+.lgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:24px}
+.lcard{background:#26363A;border-radius:16px;padding:20px}
+.lcard h3{font-family:Fraunces,serif;margin:0 0 6px;font-size:21px;color:#E3A46F}
+.lcard p{margin:0;font-size:15px;color:#DCD3C4}
+footer{padding:34px 0 50px;font-size:13px;color:var(--grey)}
+footer ul{padding-left:18px}
+/* lightbox */
+#lb{position:fixed;inset:0;background:rgba(20,16,12,.88);display:none;align-items:center;justify-content:center;z-index:50;padding:20px;cursor:zoom-out}
+#lb img{max-width:96vw;max-height:92vh;border-radius:10px}
+@media (max-width:860px){.hero .wrap,.sec .grid,.sec:nth-of-type(even) .grid{grid-template-columns:1fr}.sec:nth-of-type(even) .grid figure{order:0}.tl{grid-template-columns:repeat(2,1fr)}.tl:before{display:none}.lgrid{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+ <div class="wrap">
+  <div>
+   <div class="eyebrow">MUD610 · Cultural research · UAE cities</div>
+   <h1>Memory of Place</h1>
+   <p class="lead">Five heritage sites that shaped UAE cities, and what they still teach us about building with the climate, water, trade and identity.</p>
+   <div class="chips" id="chips">
+    <button class="chip on" data-f="all">All sites</button>
+    <button class="chip" data-f="climate">Climate</button>
+    <button class="chip" data-f="water">Water</button>
+    <button class="chip" data-f="trade">Trade</button>
+    <button class="chip" data-f="identity">Identity</button>
+    <button class="chip" data-f="revival">Revival</button>
+   </div>
+   <div class="meta">By Afraa AlBalushi · Master of Science in Urban Design · 2026</div>
+  </div>
+  <div class="mapbox">
+   <svg class="map" viewBox="0 0 600 470" aria-label="Map of the UAE with five heritage sites">
+    <defs><linearGradient id="sea" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2F4A50"/><stop offset="1" stop-color="#26363A"/></linearGradient></defs>
+    <rect width="600" height="470" fill="url(#sea)" rx="14"/>
+    <path id="uae" fill="#E9DCC3" stroke="#C9B58F" stroke-width="2" d=""/>
+    <text x="70" y="70" fill="#7FA3AD" font-size="14" font-style="italic" font-family="DM Sans">Arabian Gulf</text>
+    <text x="520" y="330" fill="#7FA3AD" font-size="13" font-style="italic" font-family="DM Sans" text-anchor="middle">Gulf of Oman</text>
+    <g id="pins"></g>
+   </svg>
+   <div class="maphint">Tap a pin to visit the site</div>
+  </div>
+ </div>
+</header>
+
+<section class="intro wrap">
+ <h2>Before the towers</h2>
+ <p>Long before glass and steel, UAE settlements grew around a creek, a fort or an oasis. The people who built them had no air-conditioning and little water, so every lane, wall and wind tower was a careful answer to heat, wind and scarcity. These five places show how UAE cities began, and why keeping them matters for the identity of the country today.</p>
+</section>
+
+<section class="time wrap">
+ <h2>A short timeline</h2>
+ <div class="tl">
+  <div class="t" data-go="fahidi"><div class="y">1787</div><div class="d">Al Fahidi Fort built on Dubai Creek</div></div>
+  <div class="t" data-go="hosn"><div class="y">1790s</div><div class="d">Qasr Al Hosn watchtower, Abu Dhabi</div></div>
+  <div class="t" data-go="fahidi"><div class="y">Late 1800s</div><div class="d">Merchants build Al Bastakiya</div></div>
+  <div class="t" data-go="shindagha"><div class="y">1896</div><div class="d">Sheikh Saeed Al Maktoum House begun</div></div>
+  <div class="t" data-go="sharjah"><div class="y">2010</div><div class="d">Heart of Sharjah master plan</div></div>
+  <div class="t" data-go="ain"><div class="y">2011</div><div class="d">Cultural Sites of Al Ain on the UNESCO list</div></div>
+ </div>
+</section>
+
+<main id="sites"></main>
+
+<section class="lessons">
+ <div class="wrap">
+  <div class="eyebrow">What the five places teach</div>
+  <h2>Four lessons for UAE cities today</h2>
+  <div class="lgrid">
+   <div class="lcard"><h3>Build with the climate</h3><p>Courtyards, thick walls, wind towers and narrow lanes cooled whole neighbourhoods without machines.</p></div>
+   <div class="lcard"><h3>Water decides form</h3><p>The creek and the falaj chose where people settled, traded and farmed.</p></div>
+   <div class="lcard"><h3>Keep the city compact</h3><p>Short, shaded walks between homes, souqs and mosques made the old towns walkable and social.</p></div>
+   <div class="lcard"><h3>Heritage must be lived in</h3><p>Restored places stay alive when people use them for culture, crafts and daily life.</p></div>
+  </div>
+ </div>
+</section>
+
+<footer class="wrap">
+ <b>Sources</b>
+ <ul>
+  <li>Dubai Culture &amp; Arts Authority, Al Fahidi and Al Shindagha stories, Google Arts &amp; Culture.</li>
+  <li>Emirates Open Skies, “Al Bastakiya, Dubai”; Lonely Planet and Rough Guides, Bur Dubai and Shindagha.</li>
+  <li>Visit Abu Dhabi and CNN Travel, Qasr Al Hosn; UNESCO World Heritage Centre, Cultural Sites of Al Ain.</li>
+  <li>WMPA, Heart of Sharjah concept master plan (2010).</li>
+ </ul>
+ Drawings, cards and text by Afraa AlBalushi. Videos open on YouTube.
+</footer>
+
+<div id="lb"><img alt=""></div>
+
+<script>
+const SITES=[
+ {id:"fahidi",n:"01",name:"Al Fahidi Historical Neighbourhood",where:"Bur Dubai, Dubai · formerly Al Bastakiya",lon:55.30,lat:25.255,lx:-150,ly:14,
+  tags:["climate","trade"],img:"img/1_al_fahidi.jpg",
+  alt:"Section drawing of an Al Fahidi courtyard house with a wind tower pulling the breeze down into the rooms",
+  text:"Al Fahidi grew on Dubai Creek beside Al Fahidi Fort, built in 1787. At the end of the 19th century, merchants who came from Bastak in southern Iran built solid houses here with shaded courtyards, thick walls and wind towers, linked by narrow lanes called sikkas.",
+  facts:[["Built","Late 19th century"],["Key feature","Barjeel (wind towers)"],["Lesson","Design for the climate"]],
+  think:"Walking these lanes feels cooler and quieter than the modern streets around them. The whole neighbourhood works like one big passive cooling system.",
+  video:"https://www.youtube.com/watch?v=0LrTvmbrDo8",more:"https://artsandculture.google.com/story/zAWRZ_j5CQugJw"},
+ {id:"shindagha",n:"02",name:"Al Shindagha Historic District",where:"Mouth of Dubai Creek, Dubai",lon:55.288,lat:25.27,lx:-160,ly:-14,
+  tags:["trade","identity"],img:"img/2_al_shindagha.jpg",
+  alt:"Diagram of the mouth of Dubai Creek showing Al Shindagha, Bur Dubai and Deira",
+  text:"At the mouth of Dubai Creek, Al Shindagha was where the ruling family and the city's elite lived until the 1950s. Sheikh Saeed Al Maktoum House, begun in 1896, is one of the oldest buildings in Dubai. The restored district now houses Al Shindagha Museum.",
+  facts:[["Built","From 1896"],["Key building","Sheikh Saeed Al Maktoum House"],["Lesson","Location shapes power"]],
+  think:"Shindagha shows that early Dubai grew where the harbour, trade and leadership met, right on the water.",
+  video:"https://www.youtube.com/watch?v=qfUM3OGPNjQ",more:"https://artsandculture.google.com/story/_wVRmCMBjqxcKQ"},
+ {id:"hosn",n:"03",name:"Qasr Al Hosn",where:"Abu Dhabi city",lon:54.355,lat:24.48,lx:-58,ly:28,
+  tags:["identity","water"],img:"img/3_qasr_al_hosn.jpg",
+  alt:"Drawing of Qasr Al Hosn growing from a watchtower into a fort, with a timeline of its roles",
+  text:"Qasr Al Hosn is the oldest stone building in Abu Dhabi. It began around the 1790s as a watchtower protecting the settlement and its water, then became the home of the ruling family, the seat of government, the National Consultative Council and the national archive. Today it is a museum.",
+  facts:[["Built","Around the 1790s"],["Roles","Home, government, archive"],["Lesson","One building, a city's memory"]],
+  think:"The capital grew around this fort. It is the starting point of Abu Dhabi's urban story and a symbol of national identity.",
+  video:"https://www.youtube.com/watch?v=zj_RVF8G4to",more:"https://visitabudhabi.ae/en/what-to-see/historical-sites/qasr-al-hosn"},
+ {id:"ain",n:"04",name:"Al Ain Oasis",where:"Al Ain · UNESCO World Heritage",lon:55.77,lat:24.215,lx:14,ly:30,
+  tags:["water","climate"],img:"img/4_al_ain_oasis.jpg",
+  alt:"Diagram of the falaj system carrying water from the mountains to the date palms of Al Ain Oasis",
+  text:"More than 3,000 acres of date palms and fruit trees sit in the middle of Al Ain. The oasis is fed by the falaj, channels that bring water from the mountains by gravity and share it between farms by turn. It is part of the Cultural Sites of Al Ain, the UAE's first UNESCO World Heritage Site.",
+  facts:[["Size","Over 3,000 acres"],["System","Falaj irrigation"],["Lesson","Water decides form"]],
+  think:"Here the city grew around the water, not the other way round. The oasis is still the green heart of Al Ain.",
+  video:"https://www.youtube.com/watch?v=BpbZmzBS9uw",more:"https://whc.unesco.org/en/list/1343/"},
+ {id:"sharjah",n:"05",name:"Heart of Sharjah",where:"Old town, Sharjah",lon:55.39,lat:25.36,lx:14,ly:-12,
+  tags:["revival","identity"],img:"img/5_heart_of_sharjah.jpg",
+  alt:"Plan drawing of the old town fabric of Sharjah with houses, lanes and the souq",
+  text:"The Heart of Sharjah is a large project to restore the old town, based on a concept master plan prepared in 2010. Coral-stone houses, courtyards, narrow lanes and old souqs are being restored and reused for museums, crafts, a heritage hotel and festivals such as Sharjah Heritage Days.",
+  facts:[["Plan","2010 concept master plan"],["Reuse","Museums, crafts, festivals"],["Lesson","Heritage must be lived in"]],
+  think:"Restoration here is not about freezing the past. It brings people back into the old town every day.",
+  video:"https://www.youtube.com/watch?v=khKEfVgpmZE",more:"https://www.youtube.com/watch?v=6ZaT1tssoKs"}
+];
+// map projection
+const LON0=51.4,LON1=56.6,LAT0=22.4,LAT1=26.3;
+const px=lon=>20+(lon-LON0)/(LON1-LON0)*560, py=lat=>450-(lat-LAT0)/(LAT1-LAT0)*430;
+const coast=[[51.58,24.25],[51.75,24.05],[52.1,24.0],[52.6,24.18],[53.2,24.12],[53.9,24.15],[54.3,24.3],[54.5,24.5],[54.75,24.8],[55.05,25.0],[55.25,25.2],[55.4,25.35],[55.55,25.48],[55.8,25.62],[55.95,25.8],[56.08,26.05],[56.15,25.9],[56.27,25.6],[56.37,25.25],[56.38,24.95],[56.25,24.85],[56.05,24.75],[55.95,24.5],[55.8,24.25],[55.95,24.05],[55.6,23.75],[55.5,23.4],[55.2,22.7],[52.6,22.95],[51.6,24.0]];
+document.getElementById('uae').setAttribute('d','M'+coast.map(c=>px(c[0]).toFixed(1)+','+py(c[1]).toFixed(1)).join('L')+'Z');
+const pins=document.getElementById('pins'),NS='http://www.w3.org/2000/svg';
+SITES.forEach(s=>{const g=document.createElementNS(NS,'g');g.setAttribute('class','pin');g.dataset.id=s.id;
+ const x=px(s.lon),y=py(s.lat);
+ g.innerHTML=`<circle class="halo" cx="${x}" cy="${y}" r="8"/><circle class="dot" cx="${x}" cy="${y}" r="7"/><line x1="${x}" y1="${y}" x2="${x+s.lx*0.55}" y2="${y+s.ly*0.55}" stroke="#E3A46F" stroke-width="1"/><text x="${x+s.lx}" y="${y+s.ly}">${s.n} ${s.name.replace(' Historical Neighbourhood','').replace(' Historic District','')}</text>`;
+ g.addEventListener('click',()=>document.getElementById(s.id).scrollIntoView({behavior:'smooth'}));
+ g.addEventListener('mouseenter',()=>g.classList.add('on'));g.addEventListener('mouseleave',()=>g.classList.remove('on'));
+ pins.appendChild(g);});
+// sections
+const main=document.getElementById('sites');
+SITES.forEach(s=>{const sec=document.createElement('section');sec.className='sec';sec.id=s.id;sec.dataset.tags=s.tags.join(' ');
+ sec.innerHTML=`<div class="wrap grid">
+  <figure><img src="${s.img}" alt="${s.alt}" loading="lazy"><figcaption>Drawing and card by Afraa AlBalushi · tap to enlarge</figcaption></figure>
+  <div><div class="num">SITE ${s.n}</div><h2>${s.name}</h2><div class="where">${s.where}</div>
+  <div class="tags">${s.tags.map(t=>`<span class="tag">${t}</span>`).join('')}</div>
+  <p>${s.text}</p>
+  <div class="facts">${s.facts.map(f=>`<b>${f[0]}</b><span>${f[1]}</span>`).join('')}</div>
+  <div class="think">${s.think}</div>
+  <div class="btns"><a class="btn v" href="${s.video}" target="_blank" rel="noopener">▶ Watch the video</a><a class="btn o" href="${s.more}" target="_blank" rel="noopener">Explore more</a></div>
+  </div></div>`;
+ main.appendChild(sec);});
+// filters
+document.getElementById('chips').addEventListener('click',e=>{const b=e.target.closest('.chip');if(!b)return;
+ document.querySelectorAll('.chip').forEach(c=>c.classList.toggle('on',c===b));const f=b.dataset.f;
+ document.querySelectorAll('.sec').forEach(s=>s.classList.toggle('dim',f!=='all'&&!s.dataset.tags.includes(f)));
+ document.querySelectorAll('.pin').forEach(p=>{const s=SITES.find(x=>x.id===p.dataset.id);p.style.opacity=(f==='all'||s.tags.includes(f))?1:.25;});});
+document.querySelectorAll('.tl .t').forEach(t=>t.addEventListener('click',()=>document.getElementById(t.dataset.go).scrollIntoView({behavior:'smooth'})));
+// lightbox
+const lb=document.getElementById('lb');
+document.addEventListener('click',e=>{if(e.target.matches('figure img')){lb.querySelector('img').src=e.target.src;lb.style.display='flex';}else if(e.target.closest('#lb')){lb.style.display='none';}});
+</script>
+</body>
+</html>
